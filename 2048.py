@@ -14,7 +14,7 @@ class Grid:
 
     def __init__(self, n):
         self.size = n
-        self.cells = self.generate_empty_grid()
+        self.cells = self.creer_grille_vide()
         self.compressed = False
         self.merged = False
         self.moved = False
@@ -66,7 +66,7 @@ class Grid:
 
     def left_compress(self):
         self.compressed = False
-        new_grid = self.creer_grille_vie()
+        new_grid = self.creer_grille_vide()
         for i in range(self.size):
             count = 0
             for j in range(self.size):
@@ -259,7 +259,7 @@ class Game:
                 return
 
         if self.grid.moved:
-            self.grid.random_cell()
+            self.grid.case_aleatoire()
 
         self.panel.paint()
         if not self.can_move():
@@ -318,3 +318,10 @@ if __name__ == '__main__':
     panel = GamePanel(grid)
     game2048 = Game(grid, panel)
     game2048.start()
+    
+    
+    
+    
+    
+    
+    
